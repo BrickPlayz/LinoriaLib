@@ -81,6 +81,7 @@ function Library:CreateLabel(Properties, IsHud)
     local _Instance = Library:Create('TextLabel', {
         BackgroundTransparency = 1;
         Font = Enum.Font.Code;
+        TextColor3 = Library.FontColor;
         TextSize = 16;
         TextStrokeTransparency = 0;
     });
@@ -621,7 +622,6 @@ do
             TextWrapped = true;
             ZIndex = 8;
             Parent = PickInner;
-            TextColor3 = Library.FontColor;
         });
 
         local ModeSelectOuter = Library:Create('Frame', {
@@ -660,7 +660,6 @@ do
             Visible = false;
             ZIndex = 110;
             Parent = Library.KeybindContainer;
-            TextColor3 = Library.FontColor;
         },  true);
 
         local Modes = Info.Modes or { 'Always', 'Toggle', 'Hold' };
@@ -675,7 +674,6 @@ do
                 Text = Mode;
                 ZIndex = 16;
                 Parent = ModeSelectInner;
-                TextColor3 = Library.FontColor;
             });
 
             function ModeButton:Select()
@@ -895,7 +893,7 @@ do
         });
     end;
 
-    function Funcs:AddLabel(Text, TextColor)
+    function Funcs:AddLabel(Text)
         local Label = {};
 
         local Groupbox = self;
@@ -908,7 +906,6 @@ do
             TextXAlignment = Enum.TextXAlignment.Left;
             ZIndex = 5;
             Parent = Container;
-            Color = TextColor;
         });
 
         Library:Create('UIListLayout', {
@@ -975,7 +972,6 @@ do
             Text = Text;
             ZIndex = 6;
             Parent = ButtonInner;
-            TextColor3 = Library.FontColor;
         });
 
         Library:OnHighlight(ButtonOuter, ButtonOuter,
@@ -1011,7 +1007,6 @@ do
             TextXAlignment = Enum.TextXAlignment.Left;
             ZIndex = 5;
             Parent = Container;
-            TextColor3 = Library.FontColor;
         });
 
         Groupbox:AddBlank(1);
@@ -1139,7 +1134,6 @@ do
             TextXAlignment = Enum.TextXAlignment.Left;
             ZIndex = 6;
             Parent = ToggleInner;
-            TextColor3 = Library.FontColor;
         });
 
         Library:Create('UIListLayout', {
@@ -1238,7 +1232,6 @@ do
                 TextYAlignment = Enum.TextYAlignment.Bottom;
                 ZIndex = 5;
                 Parent = Container;
-                TextColor3 = Library.FontColor;
             });
 
             Groupbox:AddBlank(3);
@@ -1301,7 +1294,6 @@ do
             Text = 'Infinite';
             ZIndex = 9;
             Parent = SliderInner;
-            TextColor3 = Library.FontColor;
         });
 
         Library:OnHighlight(SliderOuter, SliderOuter,
@@ -1420,7 +1412,6 @@ do
             TextYAlignment = Enum.TextYAlignment.Bottom;
             ZIndex = 5;
             Parent = Container;
-            TextColor3 = Library.FontColor;
         });
 
         Groupbox:AddBlank(3);
@@ -1484,7 +1475,6 @@ do
             TextWrapped = true;
             ZIndex = 7;
             Parent = DropdownInner;
-            TextColor3 = Library.FontColor;
         });
 
         Library:OnHighlight(DropdownOuter, DropdownOuter,
@@ -1606,7 +1596,6 @@ do
                     TextXAlignment = Enum.TextXAlignment.Left;
                     ZIndex = 25;
                     Parent = Button;
-                    TextColor3 = Library.FontColor;
                 });
 
                 Library:OnHighlight(Button, Button,
@@ -1846,7 +1835,6 @@ do
         TextXAlignment = Enum.TextXAlignment.Left;
         ZIndex = 203;
         Parent = InnerFrame;
-        TextColor3 = Library.FontColor;
     });
 
     Library.Watermark = WatermarkOuter;
@@ -1896,7 +1884,6 @@ do
         Text = 'Keybinds';
         ZIndex = 104;
         Parent = KeybindInner;
-        TextColor3 = Library.FontColor;
     });
 
     local KeybindContainer = Library:Create('Frame', {
@@ -1982,7 +1969,6 @@ function Library:Notify(Text, Time)
         TextSize = 14;
         ZIndex = 103;
         Parent = InnerFrame;
-        TextColor3 = Library.FontColor;
     });
 
     local LeftColor = Library:Create('Frame', {
@@ -2050,7 +2036,6 @@ function Library:CreateWindow(WindowTitle)
         TextXAlignment = Enum.TextXAlignment.Left;
         ZIndex = 1;
         Parent = Inner;
-        TextColor3 = Library.FontColor;
     });
 
     local MainSectionOuter = Library:Create('Frame', {
@@ -2141,7 +2126,6 @@ function Library:CreateWindow(WindowTitle)
             Text = Name;
             ZIndex = 1;
             Parent = TabButton;
-            TextColor3 = Library.FontColor;
         });
 
         local Blocker = Library:Create('Frame', {
@@ -2262,7 +2246,6 @@ function Library:CreateWindow(WindowTitle)
                 TextXAlignment = Enum.TextXAlignment.Left;
                 ZIndex = 5;
                 Parent = BoxInner;
-                TextColor3 = Library.FontColor;
             });
 
             local Container = Library:Create('Frame', {
@@ -2390,7 +2373,6 @@ function Library:CreateWindow(WindowTitle)
                     TextXAlignment = Enum.TextXAlignment.Center;
                     ZIndex = 7;
                     Parent = Button;
-                    TextColor3 = Library.FontColor;
                 });
 
                 local Block = Library:Create('Frame', {
